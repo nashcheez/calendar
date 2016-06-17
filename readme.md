@@ -18,7 +18,7 @@ Attaching screenshot:
 
 ![Calendar screenshot](https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png)
 
-** Few features/implementations in the code:
+*** Few features/implementations in the code:
 
 * The Calendar application only displays the current events retrieved from the sample JSON, and does not have have the Edit/Delete/Cancel functionalities.
 
