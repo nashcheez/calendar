@@ -16,7 +16,7 @@ The application has been developed using basic HTML, CSS, JavaScript and has ext
 
 Attaching screenshot:
 
-https://cloud.githubusercontent.com/assets/2913308/16149339/c03b8906-34ad-11e6-9246-ca30e175b0ff.png
+![Calendar screenshot](https://cloud.githubusercontent.com/assets/2913308/16149339/c03b8906-34ad-11e6-9246-ca30e175b0ff.png)
 
 Few features/implementations in the code:
 
