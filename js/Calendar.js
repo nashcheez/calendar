@@ -1,5 +1,5 @@
 
-var recruiterboxCalender = {
+var Calender = {
 
     // Stores the current date of events displayed on the page
     currentDate: new Date(),
@@ -11,20 +11,20 @@ var recruiterboxCalender = {
         if (sDateText === "Today") {
             oDate = new Date();
         } else if (sDateText === "Next") {
-            oDate = recruiterboxCalender.currentDate.setDate(recruiterboxCalender.currentDate.getDate() + 1);
+            oDate = Calender.currentDate.setDate(Calender.currentDate.getDate() + 1);
         } else if (sDateText === "Previous") {
-            oDate = recruiterboxCalender.currentDate.setDate(recruiterboxCalender.currentDate.getDate() - 1);
+            oDate = Calender.currentDate.setDate(Calender.currentDate.getDate() - 1);
         }
 
         // To convert the date in millisecs to date object
         oDate = new Date(oDate);
-        recruiterboxCalender.currentDate = oDate;
+        Calender.currentDate = oDate;
         $(".currentDate").html(oDate.toString().substr(4, 6) + ", " + oDate.toString().substr(11, 4));
 
         $("#calendarContainer").empty();
-        recruiterboxCalender.createCalendarHTMLGrid();
-        recruiterboxCalender.showCalenderEvents(oDate);
-        recruiterboxCalender.handleEventTimeline();
+        Calender.createCalendarHTMLGrid();
+        Calender.showCalenderEvents(oDate);
+        Calender.handleEventTimeline();
     },
 
     // To create dynamic HTML depending on working hours
@@ -144,5 +144,5 @@ var recruiterboxCalender = {
 };
 
 $(document).ready(function () {
-    recruiterboxCalender.getDate("Today");
+    Calender.getDate("Today");
 });
