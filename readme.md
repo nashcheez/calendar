@@ -20,9 +20,9 @@ Attaching screenshot:
 
 **Few features/implementations in the code:**
 
-* The Calendar application only displays the current events retrieved from the sample JSON, and does not have have the Edit/Delete/Cancel functionalities.
+* The Calendar application only displays the current events retrieved from the sample `JSON`, and does not have have the Edit/Delete/Cancel functionalities.
 
-* I took the independence and have played a bit with the CSS to improve the aesthetic behaviour of the application.
+* I took the independence and have played a bit with the `CSS` to improve the aesthetic behaviour of the application.
 
 * I have tried to maintain an object oriented architecture & implemented encapsulation, where all the global variables & functions are attributed to a single object per file.
 
@@ -32,4 +32,4 @@ Attaching screenshot:
 
 * The application was developed partially on MAC OS X using Sublime Text 3 & Google Chrome, and partially on a Windows machine using Visual Studio & Internet Explorer. Tested on both browsers.
 
-* Pardon my excessive usage of jQuery in the code. I am not a slave of jQuery, but find it easier to approach. :)
+* Pardon my excessive usage of `jQuery` in the code. I am not a slave of `jQuery`, but find it easier to approach. :)
