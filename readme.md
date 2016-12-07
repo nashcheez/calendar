@@ -14,7 +14,7 @@ Displays a calendar with events imported from a json file.
 The application has been developed using basic HTML, CSS, JavaScript and has extensive use of jQuery.
 To run the application, just open `index.html` in your browser.
 
-Attaching screenshot:
+**Attaching screenshot:**
 
 ![Calendar screenshot](https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png)
 
