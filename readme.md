@@ -11,9 +11,7 @@ Calendar
 =======
 
 Displays a calendar with events imported from a json file.
-
 The application has been developed using basic HTML, CSS, JavaScript and has extensive use of jQuery.
-
 To run the application, just open `index.html` in your browser.
 
 Attaching screenshot:
