@@ -1,24 +1,21 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Calendar</title>
-    <link href="css/Calendar.css" rel="stylesheet" />
-</head>
-<body>
-
-    <div class="datePickerContainer">
-        <div class="todayContainer" onclick="Calender.getDate('Today');">Today</div>
-        <div class="dateSelector">
-            <div class="previousDate" onclick="Calender.getDate('Previous');"><</div>
-            <div class="nextDate" onclick="Calender.getDate('Next');">></div>
+    <head>
+        <title>Calendar</title>
+        <link href="css/calendar.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="datePickerContainer">
+            <div class="todayContainer" onclick="Calender.getDate('Today');">Today</div>
+            <div class="dateSelector">
+                <div class="previousDate" onclick="Calender.getDate('Previous');"><</div>
+                <div class="nextDate" onclick="Calender.getDate('Next');">></div>
+            </div>
+            <div class="currentDate"></div>
         </div>
-        <div class="currentDate"></div>
-    </div>
-    <div id="calendarContainer">
-    </div>
-
-</body>
-<script src="JS/jquery-2.1.4.min.js"></script>
-<script src="JS/sampleData.js"></script>
-<script src="JS/Calendar.js"></script>
+        <div id="calendarContainer"></div>
+    </body>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/sampleData.js"></script>
+    <script src="js/calendar.js"></script>
 </html>
