@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/nashcheez/calendar">
-    <img src="images/calendar-icon.png" alt="Logo" width="80" height="80">
+    <img src="images/calendar-icon.png" alt="calendar" width="80" height="80" />
   </a>
 
   <h3 align="center">Calendar</h3>
@@ -41,7 +41,6 @@
 -   [Contributing](#contributing)
 -   [License](#license)
 -   [Contact](#contact)
--   [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -129,7 +128,7 @@ Project Link: [https://github.com/nashcheez/calendar](https://github.com/nashche
 [issues-shield]: https://img.shields.io/github/issues/nashcheez/calendar.svg?style=flat-square
 [issues-url]: https://github.com/nashcheez/calendar/issues
 [license-shield]: https://img.shields.io/github/license/nashcheez/calendar.svg?style=flat-square
-[license-url]: https://github.com/nashcheez/calendar/blob/master/LICENSE.txt
+[license-url]: https://github.com/nashcheez/calendar/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin&colorB=0077b5
 [linkedin-url]: https://linkedin.com/in/nashcheez
 [product-screenshot]: https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png
