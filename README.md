@@ -17,8 +17,6 @@
   <p align="center">
     A calendar that displays events imported from a JSON file.
     <br />
-    <a href="https://github.com/nashcheez/calendar"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/nashcheez/calendar">View Demo</a>
     ·
