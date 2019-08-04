@@ -127,4 +127,4 @@ Project Link: [https://github.com/nashcheez/calendar](https://github.com/nashche
 [license-url]: https://github.com/nashcheez/calendar/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin&colorB=0077b5
 [linkedin-url]: https://linkedin.com/in/nashcheez
-[product-screenshot]: https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png
+[product-screenshot]: https://user-images.githubusercontent.com/2913308/62429736-00b9ca80-b730-11e9-8e22-8fa3ce2b2e4c.png

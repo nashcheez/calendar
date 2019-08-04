@@ -16,48 +16,60 @@ body {
     width: 6%;
     display: inline-block;
     text-overflow: ellipsis;
-    box-shadow: 0px 2px 0px #eeeeee;
     padding: 8px 15px;
     text-align: center;
     font-size: 15px;
     font-weight: 500;
-    border: 2px solid #cfcfcf;
+    border: 1px solid #d9e0e2;
     vertical-align: middle;
     height: 100%;
     cursor: pointer;
     margin-right: 20px;
+    transition: all 0.3s;
+}
+
+.todayContainer:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -2px);
 }
 
 .dateSelector {
-    width: 10%;
+    width: 150px;
     display: inline-block;
-    box-shadow: 0px 2px 0px #eeeeee;
-    padding: 0 15px;
-    height: 33px;
+    height: 34px;
     text-align: center;
-    border: 2px solid #cfcfcf;
     vertical-align: middle;
     margin-right: 50px;
 }
 
 .nextDate,
 .previousDate {
-    width: 40%;
+    width: 68px;
     text-align: center;
     display: inline-block;
     height: 100%;
     cursor: pointer;
     font-size: 20px;
+    line-height: 34px;
+    transition: all 0.3s;
+    border: 1px solid #d9e0e2;
+}
+
+.nextDate:hover,
+.previousDate:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -2px);
 }
 
 .previousDate {
-    border-right: 2px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    margin-right: 5px;
 }
 
 .currentDate {
     display: inline-block;
     font-size: 16px;
-    vertical-align: bottom;
+    vertical-align: middle;
     font-weight: 500;
 }
 
