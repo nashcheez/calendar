@@ -1,38 +1,35 @@
-
-var Calender = {
-
+var calender = {
     // Stores the current date of events displayed on the page
     currentDate: new Date(),
 
     // Function that creates the calendar structure depending on the date passed
     // @parameter: sDateText - contains the date text wrt to currentDate
-    getDate: function (sDateText) {
-        var sDateToDisplay, oDate;
+    getDate: function(sDateText) {
+        var oDate;
         if (sDateText === "Today") {
             oDate = new Date();
         } else if (sDateText === "Next") {
-            oDate = Calender.currentDate.setDate(Calender.currentDate.getDate() + 1);
+            oDate = calender.currentDate.setDate(calender.currentDate.getDate() + 1);
         } else if (sDateText === "Previous") {
-            oDate = Calender.currentDate.setDate(Calender.currentDate.getDate() - 1);
+            oDate = calender.currentDate.setDate(calender.currentDate.getDate() - 1);
         }
 
         // To convert the date in millisecs to date object
         oDate = new Date(oDate);
-        Calender.currentDate = oDate;
+        calender.currentDate = oDate;
         $(".currentDate").html(oDate.toString().substr(4, 6) + ", " + oDate.toString().substr(11, 4));
 
         $("#calendarContainer").empty();
-        Calender.createCalendarHTMLGrid();
-        Calender.showCalenderEvents(oDate);
-        Calender.handleEventTimeline();
+        calender.createCalendarHTMLGrid();
+        calender.showCalenderEvents(oDate);
+        calender.handleEventTimeline();
     },
 
     // To create dynamic HTML depending on working hours
-    createCalendarHTMLGrid: function () {
+    createCalendarHTMLGrid: function() {
         var iTimeDivs = 24,
-            iTimeCounter, iCounter,
-            iStartTime = 1,
-            iEndTime = 18;
+            iTimeCounter,
+            iStartTime = 1;
 
         for (iTimeCounter = 0; iTimeCounter < iTimeDivs; iTimeCounter++) {
             var oTimeMainDiv = document.createElement("div"),
@@ -44,7 +41,8 @@ var Calender = {
 
             oTimeDisplay.className = "timeDisplay";
             oTimeMainDiv.className = "timeMainDiv";
-            oFirstHalfDiv.className = oSecondHalfDiv.className = oThirdHalfDiv.className = oFourthHalfDiv.className = "halfDivs";
+            oFirstHalfDiv.className = oSecondHalfDiv.className = oThirdHalfDiv.className = oFourthHalfDiv.className =
+                "halfDivs";
 
             // To handle the AM/PM structure and the naming of the div ids
             if (iStartTime < 10) {
@@ -60,7 +58,7 @@ var Calender = {
                     $(oTimeDisplay).append(iStartTime - 12 + " PM");
                 } else if (iStartTime === 24) {
                     $(oTimeDisplay).append(iStartTime - 12 + " AM");
-                    iStartTime = "00"
+                    iStartTime = "00";
                 }
                 oFirstHalfDiv.id = "HalfHour_" + iStartTime + "00";
                 oSecondHalfDiv.id = "HalfHour_" + iStartTime + "15";
@@ -68,15 +66,20 @@ var Calender = {
                 oFourthHalfDiv.id = "HalfHour_" + iStartTime + "45";
             }
             iStartTime++;
-            $(oTimeMainDiv).append(oFirstHalfDiv).append(oSecondHalfDiv).append(oThirdHalfDiv).append(oFourthHalfDiv);
-            $("#calendarContainer").append(oTimeDisplay).append(oTimeMainDiv);
+            $(oTimeMainDiv)
+                .append(oFirstHalfDiv)
+                .append(oSecondHalfDiv)
+                .append(oThirdHalfDiv)
+                .append(oFourthHalfDiv);
+            $("#calendarContainer")
+                .append(oTimeDisplay)
+                .append(oTimeMainDiv);
         }
     },
 
     // Matches the date with the JSON & renders all events
     // @parameter: oDate = Date object to show events on that particualr day.
-    showCalenderEvents: function (oDate) {
-
+    showCalenderEvents: function(oDate) {
         var arrMonthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
         var oDateDay = oDate.toString().substr(8, 2),
@@ -85,64 +88,153 @@ var Calender = {
 
         for (var prop in calendarEvents) {
             if (calendarEvents.hasOwnProperty(prop)) {
-                if (calendarEvents[prop].startTime.substr(8, 2) == oDateDay && calendarEvents[prop].startTime.substr(4, 3) == oDateMonth && calendarEvents[prop].startTime.substr(11, 4) == oDateYear) {
-                    var oStartTime = calendarEvents[prop].startTime.substr(16, 2) + calendarEvents[prop].startTime.substr(19, 2),
-                        oEndTime = calendarEvents[prop].endTime.substr(16, 2) + calendarEvents[prop].endTime.substr(19, 2),
-
+                if (
+                    calendarEvents[prop].startTime.substr(8, 2) == oDateDay &&
+                    calendarEvents[prop].startTime.substr(4, 3) == oDateMonth &&
+                    calendarEvents[prop].startTime.substr(11, 4) == oDateYear
+                ) {
+                    var oStartTime =
+                            calendarEvents[prop].startTime.substr(16, 2) + calendarEvents[prop].startTime.substr(19, 2),
+                        oEndTime =
+                            calendarEvents[prop].endTime.substr(16, 2) + calendarEvents[prop].endTime.substr(19, 2),
                         // Creating jQuery selector objects to minify multiple DOM access
                         oStartTimeObj = $("#HalfHour_" + oStartTime),
                         oEndTimeObj = $("#HalfHour_" + oEndTime);
 
                     // Add title and timeline of the event
-                    oStartTimeObj.addClass("eventBound").append("<span class='eventTitle'><img src='Images/calendar-icon.png'/>" + calendarEvents[prop].title + "</span>").append("<span class='eventTime'>" + calendarEvents[prop].startTime.substr(16, 5) + " - " + calendarEvents[prop].endTime.substr(16, 5) + "</span>");
+                    oStartTimeObj
+                        .addClass("eventBound")
+                        .append(
+                            "<span class='eventTitle'><img src='Images/calendar-icon.png'/>" +
+                                calendarEvents[prop].title +
+                                "</span>"
+                        )
+                        .append(
+                            "<span class='eventTime'>" +
+                                calendarEvents[prop].startTime.substr(16, 5) +
+                                " - " +
+                                calendarEvents[prop].endTime.substr(16, 5) +
+                                "</span>"
+                        );
 
                     oEndTimeObj.addClass("eventBound");
 
                     // Assumption - No event is more than 3 hours long
                     if (oStartTimeObj.parent().find("#HalfHour_" + oEndTime).length) {
-                        oStartTimeObj.nextUntil("#HalfHour_" + oEndTime).andSelf().addClass("isCalendarEvent");
+                        oStartTimeObj
+                            .nextUntil("#HalfHour_" + oEndTime)
+                            .andSelf()
+                            .addClass("isCalendarEvent");
                     } else {
-                        oStartTimeObj.nextAll(".halfDivs").andSelf().addClass("isCalendarEvent");
-                        if (oStartTimeObj.parent().next("div").next("div").find("#HalfHour_" + oEndTime).length) {
-                            oStartTimeObj.parent().next("div").next("div").find("#HalfHour_" + oEndTime).prevAll().addClass("isCalendarEvent");
+                        oStartTimeObj
+                            .nextAll(".halfDivs")
+                            .andSelf()
+                            .addClass("isCalendarEvent");
+                        if (
+                            oStartTimeObj
+                                .parent()
+                                .next("div")
+                                .next("div")
+                                .find("#HalfHour_" + oEndTime).length
+                        ) {
+                            oStartTimeObj
+                                .parent()
+                                .next("div")
+                                .next("div")
+                                .find("#HalfHour_" + oEndTime)
+                                .prevAll()
+                                .addClass("isCalendarEvent");
                         } else {
-                            oStartTimeObj.parent().next("div").next("div").children(".halfDivs").addClass("isCalendarEvent");
-                            oStartTimeObj.parent().next("div").next("div").next("div").next("div").find("#HalfHour_" + oEndTime).prevAll().addClass("isCalendarEvent");
+                            oStartTimeObj
+                                .parent()
+                                .next("div")
+                                .next("div")
+                                .children(".halfDivs")
+                                .addClass("isCalendarEvent");
+                            oStartTimeObj
+                                .parent()
+                                .next("div")
+                                .next("div")
+                                .next("div")
+                                .next("div")
+                                .find("#HalfHour_" + oEndTime)
+                                .prevAll()
+                                .addClass("isCalendarEvent");
                         }
                     }
 
                     // To handle cyclic timeline - where an event can start one one day (11PM) and end on the other (1AM)
-                    if (oEndTimeObj.hasClass("eventBound") && (!(oEndTimeObj.prev(".halfDivs").hasClass("isCalendarEvent")))) {
-
-                        if (!(oEndTimeObj.parent().prev("div").prev("div").children().last().hasClass('isCalendarEvent'))) {
+                    if (
+                        oEndTimeObj.hasClass("eventBound") &&
+                        !oEndTimeObj.prev(".halfDivs").hasClass("isCalendarEvent")
+                    ) {
+                        if (
+                            !oEndTimeObj
+                                .parent()
+                                .prev("div")
+                                .prev("div")
+                                .children()
+                                .last()
+                                .hasClass("isCalendarEvent")
+                        ) {
                             oEndTimeObj.prevAll().addClass("isCalendarEvent");
-                            oEndTimeObj.parent().prev("div").prev("div").children().addClass('isCalendarEvent');
-                            oEndTimeObj.parent().prev("div").prev("div").prev("div").prev("div").children().addClass('isCalendarEvent');
+                            oEndTimeObj
+                                .parent()
+                                .prev("div")
+                                .prev("div")
+                                .children()
+                                .addClass("isCalendarEvent");
+                            oEndTimeObj
+                                .parent()
+                                .prev("div")
+                                .prev("div")
+                                .prev("div")
+                                .prev("div")
+                                .children()
+                                .addClass("isCalendarEvent");
                         }
                     }
-
                 }
             }
         }
     },
 
     // To handle when the calendar timeline starts and ends
-    handleEventTimeline: function () {
-        var sFirstEventStartTime = Number($("#calendarContainer").find(".isCalendarEvent").first().attr("id").substr(9, 2)),
-            sLastEventEndTime = Number($("#calendarContainer").find(".isCalendarEvent").last().attr("id").substr(9, 2));
+    handleEventTimeline: function() {
+        var sFirstEventStartTime = Number(
+                $("#calendarContainer")
+                    .find(".isCalendarEvent")
+                    .first()
+                    .attr("id")
+                    .substr(9, 2)
+            ),
+            sLastEventEndTime = Number(
+                $("#calendarContainer")
+                    .find(".isCalendarEvent")
+                    .last()
+                    .attr("id")
+                    .substr(9, 2)
+            );
 
         // If there are no events before 8AM, remove calendar timeline prior to that
         if (sFirstEventStartTime > 8) {
-            $("#HalfHour_0800").parent().prev("div").prevAll("div").remove();
+            $("#HalfHour_0800")
+                .parent()
+                .prev("div")
+                .prevAll("div")
+                .remove();
         }
 
         // If there are no events after 6PM, remove calendar timeline after that
         if (sLastEventEndTime < 18 && sLastEventEndTime !== 0) {
-            $("#HalfHour_1800").parent().nextAll("div").remove();
+            $("#HalfHour_1800")
+                .parent()
+                .nextAll("div")
+                .remove();
         }
-    }
+    },
 };
 
-$(document).ready(function () {
-    Calender.getDate("Today");
+$(document).ready(function() {
+    calender.getDate("Today");
 });

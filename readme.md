@@ -1,35 +1,135 @@
----
-title: Calendar
-description: Displays a calendar with registered events imported from a json.
-author: Abinash Shaw
-tags: calendar, events
-created:  2015 July 12
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
----
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/nashcheez/calendar">
+    <img src="images/calendar-icon.png" alt="Logo" width="80" height="80">
+  </a>
 
-Calendar
-=======
+  <h3 align="center">Calendar</h3>
 
-Displays a calendar with events imported from a json file.
-The application has been developed using basic HTML, CSS, JavaScript and has extensive use of jQuery.
+  <p align="center">
+    A calendar that displays events imported from a JSON file.
+    <br />
+    <a href="https://github.com/nashcheez/calendar"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/nashcheez/calendar">View Demo</a>
+    ·
+    <a href="https://github.com/nashcheez/calendar/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/nashcheez/calendar/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+-   [About the Project](#about-the-project)
+    -   [Key Features](#key-features)
+    -   [Built With](#built-with)
+-   [Getting Started](#getting-started)
+    -   [Installation](#installation)
+-   [Roadmap](#roadmap)
+-   [Contributing](#contributing)
+-   [License](#license)
+-   [Contact](#contact)
+-   [Acknowledgements](#acknowledgements)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://github.com/nashcheez/calendar)
+
+Calendar is an application that parses a json file and creates events based on it.
+
+### Key Features
+
+-   The application displays current events retrieved from the sample `JSON`, and does not have have the Edit/Delete/Cancel functionalities yet.
+
+-   The app has an object oriented architecture implementing encapsulation and all the global variables & functions are attributed to a single `calendar` object.
+
+-   The calendar timeline shows a normal day of 8AM - 6PM by default, unless there are events beyond the range. In case of events that do not lie in the range, the day is widened as required to show the extra events. In case of events all throughout the day, a full day calendar timeline is displayed (1AM - 12 AM).
+
+### Built With
+
+The application has been developed using HTML, CSS, JavaScript and jQuery.
+
+For more information about jQuery, please visit the official docs.
+
+-   [JQuery](https://jquery.com)
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
 To run the application, just open `index.html` in your browser.
 
-**Attaching screenshot:**
+### Installation
 
-![Calendar screenshot](https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png)
+1. Clone the repo
 
-**Few features/implementations in the code:**
+```sh
+git clone https://github.com/nashcheez/calendar.git
+```
 
-* The Calendar application only displays the current events retrieved from the sample `JSON`, and does not have have the Edit/Delete/Cancel functionalities.
+2. Open `index.html`
 
-* I took the independence and have played a bit with the `CSS` to improve the aesthetic behaviour of the application.
+<!-- ROADMAP -->
 
-* I have tried to maintain an object oriented architecture & implemented encapsulation, where all the global variables & functions are attributed to a single object per file.
+## Roadmap
 
-* The calendar timeline shows a normal day of 8AM - 6PM, unless there are events beyond the range. In case of events that do not lie in the range, the range is widened as per required to show the calendar events. In case of events all throughout the day, an apt full day calendar timeline is displayed (1AM - 12 AM).
+See the [open issues](https://github.com/nashcheez/calendar/issues) for a list of proposed features (and known issues).
 
-* I have provided comments wherever possible for a better understanding of the code.
+<!-- CONTRIBUTING -->
 
-* The application was developed partially on MAC OS X using Sublime Text 3 & Google Chrome, and partially on a Windows machine using Visual Studio & Internet Explorer. Tested on both browsers.
+## Contributing
 
-* Pardon my excessive usage of `jQuery` in the code. I am not a slave of `jQuery`, but find it easier to approach. :)
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+[@nashcheez](https://twitter.com/nashcheez) - nashcheez@gmail.com
+
+Project Link: [https://github.com/nashcheez/calendar](https://github.com/nashcheez/calendar)
+
+<!-- ACKNOWLEDGEMENTS -->
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/nashcheez/calendar.svg?style=flat-square
+[contributors-url]: https://github.com/nashcheez/calendar/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/nashcheez/calendar.svg?style=flat-square
+[forks-url]: https://github.com/nashcheez/calendar/network/members
+[stars-shield]: https://img.shields.io/github/stars/nashcheez/calendar.svg?style=flat-square
+[stars-url]: https://github.com/nashcheez/calendar/stargazers
+[issues-shield]: https://img.shields.io/github/issues/nashcheez/calendar.svg?style=flat-square
+[issues-url]: https://github.com/nashcheez/calendar/issues
+[license-shield]: https://img.shields.io/github/license/nashcheez/calendar.svg?style=flat-square
+[license-url]: https://github.com/nashcheez/calendar/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin&colorB=0077b5
+[linkedin-url]: https://linkedin.com/in/nashcheez
+[product-screenshot]: https://cloud.githubusercontent.com/assets/2913308/16153220/0b48ac8e-34c3-11e6-8c85-420ff4b5e000.png
