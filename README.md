@@ -18,7 +18,7 @@
     A calendar that displays events imported from a JSON file.
     <br />
     <br />
-    <a href="https://github.com/nashcheez/calendar">View Demo</a>
+    <a href="https://nashcheez.github.io/calendar/">View Demo</a>
     ·
     <a href="https://github.com/nashcheez/calendar/issues">Report Bug</a>
     ·
@@ -44,7 +44,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/nashcheez/calendar)
+[![Product Name Screen Shot][product-screenshot]](https://nashcheez.github.io/calendar/)
 
 Calendar is an application that parses a json file and creates events based on it.
 
